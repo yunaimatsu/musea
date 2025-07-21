@@ -50,11 +50,17 @@ c.hints.uppercase = True
 
 # Background color for INSERT MODE in statusbar
 c.colors.statusbar.insert.bg = '#FF5733'
-c.colors.statusbar.url.fg = '#FFFF00'
+c.colors.statusbar.url.fg = '#ff0000'                     # 通常時（表示は赤に）
+c.colors.statusbar.url.success.http.fg = '#ff0000'        # HTTP成功時
+c.colors.statusbar.url.success.https.fg = '#ff0000'       # HTTPS成功時
+c.colors.statusbar.url.error.fg = '#ff0000'               # エラー時
+c.colors.statusbar.url.warn.fg = '#ff0000'                # 警告時
+c.colors.statusbar.url.hover.fg = '#ff0000'               # ホバー時
 
 # Foreground (text) color for INSERT MODE in statusbar
-c.colors.statusbar.insert.fg = 'white'  # e.g., 'white'
-
+c.colors.statusbar.normal.bg = '#000000'  # 背景を黒
+c.colors.statusbar.command.bg = '#000000'
+c.colors.statusbar.insert.bg = '#FF5733'  # これは既存指定
 # Start color of the tab indicator (progress bar in tabs)
 c.colors.tabs.indicator.start = '#2ECC40'
 
