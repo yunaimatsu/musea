@@ -8,6 +8,61 @@ c.content.desktop_capture = True
 c.content.javascript.enabled = True
 c.tabs.position = 'left'
 c.fonts.default_size = '8pt'
+c.fonts.default_family = 'JetBrains Mono'
+
+# Colors for the suggestion bar
+c.colors.completion.fg = "#cfcfcf"  # Text color
+c.colors.completion.odd.bg = "#262626"  # Odd row background
+c.colors.completion.even.bg = "#1a1a1a"  # Even row background
+c.colors.completion.category.bg = "#333347"  # Category header background
+c.colors.completion.category.fg = "#f5c542"  # Category header text
+c.colors.completion.match.fg = "#42f58d"  # Highlight match color
+
+# Borders & selected item
+c.colors.completion.item.selected.bg = "#3c4480"
+c.colors.completion.item.selected.fg = "#ffffff"
+c.colors.completion.item.selected.border.top = "#3c4480"
+c.colors.completion.item.selected.border.bottom = "#3c4480"
+
+# Vibrant, high-contrast colors for hints
+c.colors.hints.fg = "#FFFFFF"          # White text
+c.colors.hints.bg = "#1e1e2e"          # Dark purple background
+c.colors.hints.match.fg = "#f7768e"    # Neon pink for matched text
+
+# Standout font
+c.fonts.hints = "bold 8pt JetBrains Mono, monospace"
+
+# Padding and rounded corners for a pill effect
+c.hints.padding = { 'top': 1, 'right': 4, 'bottom': 1, 'left': 4 }
+c.hints.radius = 3
+
+# Border using a neon-like color
+c.hints.border = "1px solid #7dcfff"   # Cyan neon border
+
+# Uncommon, visually striking hint characters
+# c.hints.chars = 'NEONXZCV'
+
+# (Optional) Make hint tags uppercase for emphasis
+c.hints.uppercase = True
+
+# Font settings
+# c.completion.font = '14pt FiraCode Nerd Font'
+
+# Background color for INSERT MODE in statusbar
+c.colors.statusbar.insert.bg = '#FF5733'
+c.colors.statusbar.url.fg = '#FFFF00'
+
+# Foreground (text) color for INSERT MODE in statusbar
+c.colors.statusbar.insert.fg = 'white'  # e.g., 'white'
+
+# Start color of the tab indicator (progress bar in tabs)
+c.colors.tabs.indicator.start = '#2ECC40'
+
+# End color for the indicator gradient
+c.colors.tabs.indicator.stop = '#FFDC00'
+
+# Color for the tab indicator when there is an error
+c.colors.tabs.indicator.error = 'red'
 
 # Key-remapping
 c.bindings.key_mappings = {"<Ctrl-G>": "<Escape>"}
