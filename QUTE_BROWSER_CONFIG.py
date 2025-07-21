@@ -28,7 +28,7 @@ c.url.searchengines = {
   'gh': 'https://github.com/search?q={}',
   'gl': 'https://gitlab.com/search?search={}',
   'sc': 'https://scholar.google.com/scholar?q={}',
-  'gm': 'https://gemini.google.com/app/search?q={}',
+  # 'gm': 'https://www.google.com/search?q=site:gemini.google.com+{}',
   'cl': 'https://claude.ai/new?q={}',
   'aur': 'https://aur.archlinux.org/packages?K={}',
   'rae': 'https://dle.rae.es/{}',
