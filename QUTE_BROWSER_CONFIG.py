@@ -1,4 +1,8 @@
 config.load_autoconfig(False)
+from tab import tab
+from statusbar import statusbar
+tab(c, config)
+statusbar(c, config)
 # c.colors.tab
 # c.colors.statusbar
 # Media
@@ -48,19 +52,6 @@ c.hints.uppercase = True
 # Font settings
 # c.completion.font = '14pt FiraCode Nerd Font'
 
-# Background color for INSERT MODE in statusbar
-c.colors.statusbar.insert.bg = '#FF5733'
-c.colors.statusbar.url.fg = '#ff0000'                     # 通常時（表示は赤に）
-c.colors.statusbar.url.success.http.fg = '#ff0000'        # HTTP成功時
-c.colors.statusbar.url.success.https.fg = '#ff0000'       # HTTPS成功時
-c.colors.statusbar.url.error.fg = '#ff0000'               # エラー時
-c.colors.statusbar.url.warn.fg = '#ff0000'                # 警告時
-c.colors.statusbar.url.hover.fg = '#ff0000'               # ホバー時
-
-# Foreground (text) color for INSERT MODE in statusbar
-c.colors.statusbar.normal.bg = '#000000'  # 背景を黒
-c.colors.statusbar.command.bg = '#000000'
-c.colors.statusbar.insert.bg = '#FF5733'  # これは既存指定
 # Start color of the tab indicator (progress bar in tabs)
 c.colors.tabs.indicator.start = '#2ECC40'
 
@@ -108,22 +99,3 @@ map('h', 'scroll left')
 map('l', 'scroll right')
 # map('H', 'tab-prev')
 # map('L', 'tab-next')
-
-# bg-color of the tab bar 
-config.set('colors.tabs.bar.bg', '#1e1e1e')
-config.set('colors.webpage.darkmode.enabled', True)
-
-## Non-selected
-config.set('colors.tabs.even.bg', '#222222')
-config.set('colors.tabs.odd.bg', '#444444')
-config.set('colors.tabs.even.fg', '#aaaaaa')
-config.set('colors.tabs.odd.fg', '#aaaaaa')
-
-## Selected
-config.set('colors.tabs.selected.even.bg', '#aaaaaa')
-config.set('colors.tabs.selected.odd.bg', '#aaaaaa')
-config.set('colors.tabs.selected.even.fg', '#111111')
-config.set('colors.tabs.selected.odd.fg', '#111111')
-
-## Tab box 
-c.tabs.padding = {'top': 6, 'bottom': 6, 'left': 4, 'right': 4 }
