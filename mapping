@@ -1,3 +1,4 @@
 QUTE_BROWSER_CONFIG.py:$HOME/.config/qutebrowser/config.py
 QUTE_BROWSER_CONFIG_TAB.py:$HOME/.config/qutebrowser/tab.py
 QUTE_BROWSER_CONFIG_STATUSBAR.py:$HOME/.config/qutebrowser/statusbar.py
+QUTE_BROWSER_CONFIG_COMPLETION.py:$HOME/.config/qutebrowser/completion.py
