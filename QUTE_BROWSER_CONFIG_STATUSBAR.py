@@ -6,6 +6,6 @@ def statusbar(c, config):
     c.colors.statusbar.url.error.fg = '#ff0000'
     c.colors.statusbar.url.warn.fg = '#ff0000'
     c.colors.statusbar.url.hover.fg = '#ff0000'
-    c.colors.statusbar.normal.bg = '#000000'
     c.colors.statusbar.command.bg = '#000000'
     c.colors.statusbar.insert.bg = '#FF5733'
+    c.colors.statusbar.normal.bg = '#00000000'

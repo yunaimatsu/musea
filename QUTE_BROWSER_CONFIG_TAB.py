@@ -17,3 +17,4 @@ def tab(c, config):
 
     ## Tab box 
     c.tabs.padding = {'top': 6, 'bottom': 6, 'left': 4, 'right': 4 }
+    c.tabs.favicons.show = 'never'

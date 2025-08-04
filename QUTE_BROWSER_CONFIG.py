@@ -1,32 +1,75 @@
 config.load_autoconfig(False)
 from tab import tab
 from statusbar import statusbar
+from completion import completion
 tab(c, config)
 statusbar(c, config)
-# c.colors.tab
-# c.colors.statusbar
+completion(c, config)
+
+# WebRTC基本設定
+c.content.webrtc_ip_handling_policy = "all-interfaces"
+c.colors.webpage.darkmode.enabled=False
+
+# より強力なChromium引数
+c.qt.args = [
+    # WebRTC基本
+    "--enable-webrtc",
+    "--enable-webrtc-remote-event-log",
+    
+    # メディアデバイス
+    "--enable-media-stream",
+    "--use-fake-ui-for-media-stream",
+    "--use-fake-device-for-media-stream",  # テスト用
+    "--enable-usermedia-screen-capturing",
+    
+    # GPU/ハードウェア加速
+    "--enable-gpu-rasterization",
+    "--ignore-gpu-blacklist",
+    "--disable-gpu-sandbox",
+    
+    # セキュリティ関連（テスト用）
+    "--allow-running-insecure-content",
+    "--disable-web-security",
+    "--disable-features=VizDisplayCompositor",
+    "--enable-features=VaapiVideoDecoder"
+    "--autoplay-policy=no-user-gesture-required",
+    "--enable-logging=stderr",
+    "--v=1"
+
+    # デバッグ用
+    "--enable-logging",
+    "--log-level=0",
+    "--vmodule=*media*=3"
+]
+
+config.bind('<Ctrl-b>', 'config-cycle tabs.show always never')
+config.bind('<Ctrl-g>', 'mode-leave', mode='passthrough')
+
+# メディア許可
+c.content.media.audio_capture = True
+c.content.media.video_capture = True
+c.content.media.audio_video_capture = True
+
+# 自動許可設定（Meetの場合）
+c.content.notifications.enabled = True
+c.content.autoplay = True
+
 # Media
 c.content.media.audio_capture = True
 c.content.media.video_capture = True
+c.content.media.audio_video_capture = True
 c.content.desktop_capture = True
+# HTTPS以外でのWebRTC使用許可（テスト用）
+# c.content.tls.insecure_ciphers = True
 c.content.javascript.enabled = True
+# カメラ・マイクアクセス許可
+c.content.media.audio_capture = True
+c.content.media.video_capture = True
+c.content.media.audio_video_capture = True
+
 c.tabs.position = 'left'
 c.fonts.default_size = '8pt'
 c.fonts.default_family = 'JetBrains Mono'
-
-# Colors for the suggestion bar
-c.colors.completion.fg = "#cfcfcf"  # Text color
-c.colors.completion.odd.bg = "#262626"  # Odd row background
-c.colors.completion.even.bg = "#1a1a1a"  # Even row background
-c.colors.completion.category.bg = "#333347"  # Category header background
-c.colors.completion.category.fg = "#f5c542"  # Category header text
-c.colors.completion.match.fg = "#42f58d"  # Highlight match color
-
-# Borders & selected item
-c.colors.completion.item.selected.bg = "#3c4480"
-c.colors.completion.item.selected.fg = "#ffffff"
-c.colors.completion.item.selected.border.top = "#3c4480"
-c.colors.completion.item.selected.border.bottom = "#3c4480"
 
 # Vibrant, high-contrast colors for hints
 c.colors.hints.fg = "#FFFFFF"          # White text
@@ -48,9 +91,6 @@ c.hints.border = "1px solid #7dcfff"   # Cyan neon border
 
 # (Optional) Make hint tags uppercase for emphasis
 c.hints.uppercase = True
-
-# Font settings
-# c.completion.font = '14pt FiraCode Nerd Font'
 
 # Start color of the tab indicator (progress bar in tabs)
 c.colors.tabs.indicator.start = '#2ECC40'
